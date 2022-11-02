@@ -1,0 +1,27 @@
+{
+  "name": "getting-started-s3-website",
+  "version": "1.0.0",
+  "description": "A project to demonstrate how to create a static website hosting s3 bucket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:check": "mega-linter-runner --remove-container --container-name megalinter",
+    "lint:fix": "npm run lint:check --fix",
+    "audit": "npm audit",
+    "tf:apply": "terraform -chdir=./terraform init && terraform -chdir=./terraform apply "
+  },
+  "keywords": [
+    "s3",
+    "terraform"
+  ],
+  "author": "Charlie Smith",
+  "license": "MIT",
+  "dependencies": {
+    "mega-linter-runner": "^6.13.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint:check",
+    "audit"
+  ]
+}
